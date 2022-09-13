@@ -1,0 +1,25 @@
+[[source]]
+url = 'https://pypi.python.org/simple'
+verify_ssl = true
+name = 'pypi'
+
+[requires]
+python_version = '3.9'
+
+[packages]
+pandas = '*'
+numpy = '*'
+scikit-learn = '*'
+coloredlogs = '*'
+tqdm = '*'
+matplotlib = '*'
+tensorflow = '>=2.0'
+
+[dev-packages]
+pdbpp = '*'
+black = '*'
+ipykernel = "*"
+
+[scripts]
+format = "python -m black ceos/ -l 119"
+test = "pytest tests"
