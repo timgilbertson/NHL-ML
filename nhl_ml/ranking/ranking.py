@@ -7,19 +7,19 @@ def rank_players(prediction_df: pd.DataFrame) -> pd.DataFrame:
     right = prediction_df[prediction_df["Position"].str.contains("R")].reset_index()
     defence = prediction_df[prediction_df["Position"].str.contains("D")].reset_index()
 
-    centres = centres.assign(rank=lambda x: x["goals"] + x["assists"] + x["PIM"] + x["shots"]).sort_values(
+    centres = centres.assign(rank=lambda x: x["goals"] + x["assists"] + x["PIM"] + x["shots"] + x["toi"] + x["blocks"]).sort_values(
         "rank", ascending=False
     )
-    left = left.assign(rank=lambda x: x["goals"] + x["assists"] + x["PIM"] + x["shots"]).sort_values(
+    left = left.assign(rank=lambda x: x["goals"] + x["assists"] + x["PIM"] + x["shots"]  + x["toi"] + x["blocks"]).sort_values(
         "rank", ascending=False
     )
-    right = right.assign(rank=lambda x: x["goals"] + x["assists"] + x["PIM"] + x["shots"]).sort_values(
+    right = right.assign(rank=lambda x: x["goals"] + x["assists"] + x["PIM"] + x["shots"]  + x["toi"] + x["blocks"]).sort_values(
         "rank", ascending=False
     )
-    defence = defence.assign(rank=lambda x: x["goals"] + x["assists"] + x["PIM"] + x["shots"]).sort_values(
+    defence = defence.assign(rank=lambda x: x["goals"] + x["assists"] + x["PIM"] + x["shots"]  + x["toi"] + x["blocks"]).sort_values(
         "rank", ascending=False
     )
-    prediction_df = prediction_df.assign(rank=lambda x: x["goals"] + x["assists"] + x["PIM"] + x["shots"]).sort_values(
+    prediction_df = prediction_df.assign(rank=lambda x: x["goals"] + x["assists"] + x["PIM"] + x["shots"]  + x["toi"] + x["blocks"]).sort_values(
         "rank", ascending=False
     )
 

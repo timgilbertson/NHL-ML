@@ -16,7 +16,7 @@ def _fix_multiple_positions(player_data: pd.DataFrame) -> pd.DataFrame:
         player_data = player_data[player_data["Position"] != "D"]
 
     player = player_data["Player"].iloc[0]
-    return player_data.agg(sum).to_frame().T.assign(Player=player)
+    return player_data.agg("sum").to_frame().T.assign(Player=player)
 
 
 def _scale_player_data(player_data: pd.DataFrame) -> pd.DataFrame:

@@ -3,7 +3,20 @@ from typing import Dict
 
 import pandas as pd
 
-IN_COLUMNS = ["Player", "Goals", "Total Assists", "PIM", "Total Points", "Shots", "GP", "Position", "First Assists", "Second Assists", "TOI"]
+IN_COLUMNS = [
+    "Player",
+    "Goals",
+    "Total Assists",
+    "PIM",
+    "Total Points",
+    "Shots",
+    "GP",
+    "Position",
+    "First Assists",
+    "Second Assists",
+    "TOI",
+    "Shots Blocked"
+]
 
 
 def load_csvs(params: Dict[str, str], player_data=pd.DataFrame()) -> pd.DataFrame:
@@ -38,4 +51,5 @@ def _column_map(file_name):
         "First Assists": f"first_assists_{int(file_name[5:-4])}",
         "Second Assists": f"second_assists_{int(file_name[5:-4])}",
         "TOI": f"toi_{int(file_name[5:-4])}",
+        "Shots Blocked": f"blocks_{int(file_name[5:-4])}",
     }

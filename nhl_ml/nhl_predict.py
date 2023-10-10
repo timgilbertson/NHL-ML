@@ -24,7 +24,7 @@ def rank_next_season(params: Dict[str, str]):
     train_features, test_features, train_target, test_target, full_features = transform_player_data(pre_processed_player_data)
 
     logger.info("Predicting Next Season")
-    prediction_df, trained_model = calc_new_season(train_target, train_features, full_features, full_features.copy(deep=True))
+    prediction_df, trained_model = calc_new_season(train_target, train_features, full_features, full_features.copy(deep=True), nn=True)
 
     logger.info("Validating Model")
     validate_model(trained_model, test_target, test_features)
