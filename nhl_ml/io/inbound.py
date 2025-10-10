@@ -11,7 +11,7 @@ from tqdm import tqdm
 # Initialize NHL client
 nhl_client = NHLClient()
 THIS_YEAR = datetime.now().year
-FIRST_YEAR = 1975
+FIRST_YEAR = 1960
 
 # Column mappings from NHL API to our expected format
 SKATER_COLUMN_MAPPING = {
